@@ -35,3 +35,15 @@ func tapped(_ sender: UITapGestureRecognizer) {
     print("tapped")
 }
 ```
+
+### Reading and writing values to UserDefaults
+Writing a value:
+```
+let value = 5
+UserDefaults.standard.set(value, forKey: "key")
+```
+
+Reading a value:
+```
+let value = UserDefaults.standard.integer(forKey: "key")
+```
