@@ -95,13 +95,15 @@ let files = try! FileManager.default.contentsOfDirectory(atPath: bundlePath)
 ### NSKeyedArchiver and NSSKeyedUnarchiver
 
 #### NSKeyedArchiver
-
+```
 let person = Person(name: "Incognito", height: 187)
 NSKeyedArchiver.archiveRootObject(person, toFile: "filename")
+```
 
 #### NSKeyedUnarchiver
-
+```
 let restoredPerson = NSKeyedUnarchiver.unarchiveObject(withFile: "filename")
+```
 
 #### NSCoding protocol
 
@@ -144,5 +146,13 @@ func setTimer() {
 
 func timerFired() {
     print("timerFired()")
+}
+```
+
+### Hide the status bar
+In a UIViewController-derived class, override the prefersStatusBarHidden property:
+```
+override var prefersStatusBarHidden: Bool {
+    return true
 }
 ```
