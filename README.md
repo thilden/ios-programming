@@ -156,3 +156,31 @@ override var prefersStatusBarHidden: Bool {
     return true
 }
 ```
+
+### Grand Central Dispatch (GCD)
+```
+// Default QoS:
+DispatchQueue.global().async { [unowned self] in
+    // Code to execute
+}
+
+// User Initiated QoS:
+DispatchQueue.global(qos: .userInitiated).async { [unowned self] in
+    // Code to execute
+}
+```
+
+#### Quality of Service classes
+* User Interactive
+* User Initiated
+* Default
+* Utility
+* Background
+
+#### performSelector()
+Creates a new thread. The `with` parameter indicates an argument passed to the method.
+```
+performSelector(inBackground: #selector(doStuff), with: nil)
+
+performSelector(onMainThread: #selector(doStuff), with: nil, waitUntilDone: false)
+```
