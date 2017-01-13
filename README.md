@@ -184,3 +184,13 @@ performSelector(inBackground: #selector(doStuff), with: nil)
 
 performSelector(onMainThread: #selector(doStuff), with: nil, waitUntilDone: false)
 ```
+
+### UITableView
+
+#### Deselect a view after selection
+
+```
+override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+}
+```
