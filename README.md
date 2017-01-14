@@ -92,10 +92,16 @@ let bundlePath = Bundle.main.resourcePath!
 let files = try! FileManager.default.contentsOfDirectory(atPath: bundlePath)
 ```
 
+Read contents of a text file in the bundle (example.txt) to String:
+```
+let filePath = Bundle.main.path(forResource: "example", ofType: "txt")
+let url = URL(fileURLWithPath: filePath)
+let text = try! String(contentsOf: url)
+```
+
 ### NSKeyedArchiver and NSSKeyedUnarchiver
 
 #### NSKeyedArchiver
-```
 let person = Person(name: "Incognito", height: 187)
 NSKeyedArchiver.archiveRootObject(person, toFile: "filename")
 ```
